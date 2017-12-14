@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<!--
+<html>
+<head>
+    <script>
+        window.onload = function (){
+            var eenvar = document.getElementsByTagName('body');
+            console.log(eenvar);
+            alert(eenvar[0].baseURI);
+            alert(eenvar[0].children[3].tagName);
+
+        }                
+        function yoyo(){
+            var eenvar = document.getElementsByTagName('body');
+              eenvar[0].children[6].innerHTML = "dit is een test";  
+            }
+       </script>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+    <input type="button" onclick="yoyo()">
+    <input type="button">
+    <br>
+    <span class="gazelle">hallo gazelle</span>
+    <span class="gazelle">hallo gazelle</span>
+    <span class="gazelle">hallo gazelle</span>
+    <span class="gazelle">hallo gazelle</span>
+    <br>
+    <span id=hoi class="gazelle">hallo gazelle</span>
+</body>
+</html>
+var afterRemove = document.getElementById("innerDiv");
+                alert(afterRemove);
+
+
+
+
+test createElement
+<html>
+    <head>
+        <script>
+            function yoyo() {
+                var body = document.getElementsByTagName('body');
+                console.log(body);
+                var art = document.createElement("ARTICLE");
+                art.innerHTML = "article test";
+                document.body.appendChild(art);
+                art.innerHTML = "article test";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="innerDiv"> innerdiv</div>
+        <div id="noDiv">no div</div>
+        <button onclick="yoyo()">oyoyo</button>
+    </body>
+</html>
+
+<html>
+    <head>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <div id="innerDiv"> innerdiv</div>
+        <div id="noDiv">no div</div>
+        <button onclick="yoyo()">oyoyo</button>
+    </body>
+</html>
+
+<html>
+    <head>
+        <script>
+            function vbfunctie(){
+                tonen('e');
+                try{
+                    oefenmethode();
+                }catch(e){                    
+                    tonen('b');
+                }finally{
+                    tonen('c')
+                    oefenmethode();
+                }
+                tonen('d');
+            }
+            function oefenmethode(){
+                sfsd.adsfasd;
+                tonen('a');
+            }
+            function tonen(tekst){
+                document.getElementById('uitkomst').innerHTML = tekst;
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <button onclick="vbfunctie()" id="knop">voorbeeld</button>
+        <div id="uitkomst"></div>
+    </body>
+</html>
+
+<html>
+    <head>
+        <script>
+            function vbfunctie(){
+               
+                try{
+                    oefenmethode();
+                }catch(e){                    
+                    tonen('b');
+                }finally{
+                    tonen('c')
+                    oefenmethode();
+                }
+                tonen('d');
+            }
+            function oefenmethode(){
+                sfsd.adsfasd;
+                tonen('a');
+            }
+            function tonen(tekst){
+                document.getElementById('uitkomst').innerHTML = tekst;
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <button onclick="vbfunctie()" id="knop">voorbeeld</button>
+        <div id="uitkomst"></div>
+    </body>
+</html>
+
+<html>
+    <head>
+        <script>
+
+        </script>
+        <style>
+            #flexbox1{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                min-width: 80px;
+                max-width: 360px;
+                min-height: 80px;
+                border: 1px solid black;
+                margin:5px;
+                background-color: DodgerBlue;
+            }
+            #flexbox1>div {
+                background-color: #f1f1f1;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;    
+            } 
+            #flexbox1>div:nth-child(1) {
+                background-color: white;
+            }
+            #flexbox1>div:nth-child(2) {
+                background-color: orange;
+            }
+            #flexbox1>div:nth-child(3) {
+                background-color: yellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="flexbox1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        section {
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            localStorage.clear();
+
+            var person = new Object();
+            person.firstName = "Rick";
+            person.lastName= "Delorme";
+            person.shirtSize = "XL";
+            localStorage.setItem("cart1", JSON.stringify(person));
+            LoadFromStorage();
+
+            function LoadFromStorage() {
+                var storageDiv = document.getElementById("storage");                
+                var tbl = document.createElement("table");
+                tbl.id = "storageTable";
+                if (localStorage.length > 0) {
+                    for (var i = 0; i < localStorage.length; i++) {
+                        var row = document.createElement("tr");
+                        var key = document.createElement("td");
+                        var val = document.createElement("td");                        
+                        key.innerText = localStorage.key(i);                        
+                        val.innerText = localStorage.getItem(key.innerText);
+                        row.appendChild(key);
+                        row.appendChild(val);
+                        tbl.appendChild(row);
+                    }
+                }
+                else {
+                    var row = document.createElement("tr");
+                    var col = document.createElement("td");
+                    col.innerText = "No data in local storage.";
+                    row.appendChild(col);
+                    tbl.appendChild(row);
+                }
+                if (document.getElementById("storageTable"))
+                {
+                    document.getElementById("storageTable").replaceNode(tbl);
+                }
+                else {
+                    storageDiv.appendChild(tbl);
+                }                
+            }            
+        }
+    </script>
+</head>
+<body>
+    <section>
+        Key:
+        <input type="text" id="toStorageKey" />
+        Value:
+        <input type="text" id="toStorageValue" /><br />
+    </section>
+    <section>
+        <button type="button" id="btnAdd">Add To Storage</button>
+        <button type="button" id="btnRemove">Remove from Storage</button>
+        <button type="button" id="btnClear">Clear Storage</button>
+    </section>
+    <div id="storage">
+        <p>Current Storage Contents</p>
+    </div>
+</body>
+</html>
+
+<html>
+    <head>
+    <script src=jquery-3.2.1.js></script>   
+    <script> 
+        function bvfunctie(){
+            //$('input').hide();
+            $.ajax({
+                url:'aanvraag.php',
+                data:{
+                    
+                }
+                success: function (hallo){
+                    alert(hallo);
+                }
+                
+            });
+        
+        }
+        
+    </script>
+        <style>
+         
+            
+        </style>
+    </head>
+    <body>
+       <input type="button" value="knop" onclick="bvfunctie()">
+
+    </body>
+</html>
+
+vervolg jquery AJAX
+
+<html>
+    <head>
+    <script src=jquery-3.2.1.js></script>   
+    <script> 
+        function bvfunctie(){
+            //$('input').hide();
+            $.ajax({
+                url:'aanvraag.php',
+                data:{
+                    leeftijd: "18"
+                },
+                success: function (data){
+                    alert(data);
+                }
+                
+            });
+        
+        }
+        
+    </script>
+        <style>
+         
+            
+        </style>
+    </head>
+    <body>
+       <input type="button" value="knop" onclick="bvfunctie()">
+
+    </body>
+</html>
+
+
+-->
+<html>
+    <head>
+    <script src=jquery-3.2.1.js></script>   
+    <script>
+        
+        window.onload = function(){
+            $('#go').click(bvfunctie);
+        };
+        
+        
+        function bvfunctie(){
+            //$('input').hide();
+            $.ajax({
+                url:'aanvraag.php',
+                data:{
+                    leeftijd: "18"
+                },
+                success: function (data){
+                    alert(data);
+                }
+                
+            });
+        
+        }
+        
+    </script>
+        <style>
+         
+            
+        </style>
+    </head>
+    <body>
+       <input type="button" value="knop" id="go">
+
+    </body>
+</html>

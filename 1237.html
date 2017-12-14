@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function () {
+                    //$('input[name$="name"]').css({'background-color': 'yellow'});
+                    $("article:first-of-type").css("background-color", "#f2f2f2");
+
+                });
+            });
+        </script>    
+        <style>
+
+        </style>
+
+
+    </head>
+    <body>
+        <section id="news">
+            <h1>World News</h1>
+            <article id="news1">...</article>
+            <article id="news2">...</article>
+            <article id="news3">...</article>
+        </section>
+        <section id="sports">
+            <h1>Sports</h1>
+            <article id="sports1">...</article>
+            <article id="sports2">...</article>
+            <article id="sports3">...</article>
+        </section>
+        
+        <button>Set background color for name</button>
+    </body>
+</html>
